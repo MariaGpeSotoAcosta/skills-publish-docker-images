@@ -1,0 +1,130 @@
+# 🚀 GitHub DevOps Learning Lab
+
+## 📌 Overview
+This repository demonstrates core concepts of Git, GitHub, and DevOps automation using GitHub Actions.
+
+It simulates a real-world workflow including:
+- Branching
+- Pull Requests
+- CI/CD pipelines
+- Docker image publishing (GHCR)
+
+---
+
+## 🎯 Objectives
+- Learn Git workflow (commit, push, branches)
+- Practice collaboration using Pull Requests
+- Implement GitHub Actions workflows
+- Automate Docker builds and deployment
+- Understand CI/CD fundamentals
+
+---
+
+## 🛠️ Technologies Used
+- Git & GitHub
+- GitHub Actions
+- Docker
+- HTML (sample app)
+
+---
+
+## 🔄 Workflow Overview
+
+### 1. Branching Strategy
+Feature branches are created from `main`.
+
+Example:
+git checkout -b feature/add-high-score
+
+---
+
+### 2. Pull Request Flow
+- Push changes to a feature branch
+- Open a Pull Request (PR)
+- CI/CD pipeline runs automatically
+- Merge into main after validation
+
+---
+
+### 3. CI/CD Pipeline
+
+Workflow file:
+.github/workflows/docker-publish.yml
+
+#### Pipeline Steps:
+1. Checkout repository
+2. Login to GitHub Container Registry (GHCR)
+3. Generate Docker image tags
+4. Build Docker image
+5. Push image to GHCR
+
+---
+
+## 🐳 Docker Images
+
+Published to:
+ghcr.io/<your-username>/<your-repo>
+
+### Tags:
+- main → latest stable build
+- pr-# → pull request builds
+- v1.0.0 → release version
+- latest → latest release
+
+---
+
+## ▶️ Run the Application
+
+docker pull ghcr.io/<your-username>/<your-repo>:main
+docker run -p 8080:80 ghcr.io/<your-username>/<your-repo>:main
+
+Open:
+http://localhost:8080
+
+---
+
+## 🌱 Example Feature
+
+### High Score Feature
+- Added "High Score" display
+- Implemented using feature branch
+- Integrated via Pull Request workflow
+
+---
+
+## 📂 Repository Structure
+
+.
+├── src/
+│   └── index.html
+├── .github/
+│   └── workflows/
+│       └── docker-publish.yml
+└── README.md
+
+---
+
+## 🧠 Key Concepts Demonstrated
+
+### Git & GitHub
+- Repository management
+- Branching strategy
+- Pull Requests
+- Issue tracking
+
+### GitHub Actions
+- Workflow YAML files
+- Jobs and steps
+- Event triggers
+- Secrets (GITHUB_TOKEN)
+
+### CI/CD
+- Automated builds
+- Docker publishing
+- Version tagging
+- Continuous Deployment basics
+
+---
+
+## 👩‍💻 Author
+María Soto
